@@ -14,9 +14,10 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App">
-        <MyComponent title = "React" onButtonClicked={this.onClickBtn}/>
+        <MyComponent title="React" onButtonClicked={this.onClickBtn}/>
       </div>
     );
   }
