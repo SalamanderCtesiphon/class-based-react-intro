@@ -11,6 +11,12 @@ class App extends Component {
     };
 
     this.countUp = this.countUp.bind(this);
+    this.countDown = this.countDown.bind(this);
+    this.onClickBtn = this.onClickBtn.bind(this);
+  }
+
+  onClickBtn() {
+    console.log('Button Clicked!');
   }
 
   countUp() {
@@ -19,12 +25,19 @@ class App extends Component {
     });
   }
 
+  countDown() {
+    this.setState({
+      count: this.state.count - 1,
+    });
+  }
+
   render() {
 
     return (
       <div className="App">
         <MyComponent title="React" onButtonClicked={this.onClickBtn}/>
-        <button onClick={this.countUp}>Click Me!</button>
+        <button onClick={this.countUp}>Increment Count</button>
+        <button onClick={this.countDown}>Decrement Count</button>
         <p>{this.state.count}</p>
       </div>
     );
